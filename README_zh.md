@@ -7,7 +7,7 @@
 ## 仓库结构
 ```
 configs/models.yaml            # 模型 id / 本地路径（S1）
-data/attention/                # 由 scripts/unpack_attention.sh 重建
+data/attention/                # canonical 注意力 JSON（8 配置）— 从 Zenodo 下载：https://doi.org/10.5281/zenodo.22990102
 data/inputs/canonical/         # en/zh 提示集（App A）
 data/probes/                   # 6 个探针集：{en,zh}×{cloze,free,gen}
 docs/ASSET_MAP_zh.md           # 论文表/图 ↔ 脚本 ↔ 数据 ↔ 日志 映射
@@ -25,16 +25,17 @@ src/intervention/              # S6–S11：探针、干预、不对称指数、
 src/plotting/                  # Figs 2–8
 tables/                        # 各表 CSV + 原始日志（intervention_raw*, matched_global_raw, selftest）
 ```
-## 快速开始（无 GPU，约 10 分钟）
+## 快速开始（无 GPU；需下载约 2.4 GB）
 ```bash
-bash scripts/unpack_attention.sh
 pip install -r envs/requirements-workstation.txt
-python scripts/verify_all.py    # 预期输出: ALL PASS
+# 从 https://doi.org/10.5281/zenodo.22990102 下载 8 个 canonical 注意力 JSON，
+# 放入 data/attention/（CC BY 4.0；解析后约占 2–3 GB 内存）
+python scripts/verify_all.py # 预期输出: ALL PASS
 ```
 ## 完整复现
 `docs/RUNBOOK_zh.md`：**路线 A** — 有 GPU 全量重跑（S0→S12）；**路线 B** — 纯数据复算。要定位任一论文数字背后的文件/脚本/日志，见 `docs/ASSET_MAP_zh.md`。
 ## 数据说明
-- 完整文件已另存档于 https://doi.org/10.5281/zenodo.22990102（Zenodo，CC BY 4.0）；仓库内保留按字节精确切的 7 MB gzip 分卷。
+- canonical 注意力 JSON 共约 2.4 GB（单个超过 GitHub 100 MB 文件上限），已存档于 Zenodo：https://doi.org/10.5281/zenodo.22990102（CC BY 4.0）。运行观测部分验证前，请先下载并放入 `data/attention/`。
 - 原始日志有意保留模型本地路径与库版本（环境证据，Appendix E）；用户名/主机名已清洗为 `user@host/env`。
 - `data/probes/zh_cloze.json` 是完整的 20 题原始池（Appendix S）；各模型保留子集（9–13 题，Δlog-prob > 0.5）记录于逐次运行日志（Table 11）。
 ## 许可证

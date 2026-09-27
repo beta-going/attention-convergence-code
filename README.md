@@ -8,7 +8,7 @@ Headline results reproduced in this artifact: Qwen3 early-band ρ_pos ratios **1
 ## Repository layout
 ```
 configs/models.yaml         # model ids / local paths (S1)
-data/attention/                # rebuilt by scripts/unpack_attention.sh
+data/attention/                # canonical attention JSONs (8 configs) — download from Zenodo: https://doi.org/10.5281/zenodo.22990102
 data/inputs/canonical/         # en/zh prompt sets (App A)
 data/probes/                   # 6 probe sets: {en,zh}×{cloze,free,gen}
 docs/ASSET_MAP_en.md           # paper table/figure ↔ script ↔ data ↔ log map
@@ -26,16 +26,17 @@ src/intervention/              # S6–S11: probes, interventions, asymmetry, CI 
 src/plotting/                  # Figs 2–8
 tables/                        # per-table CSVs + raw logs (intervention_raw*, matched_global_raw, selftest)
 ```
-## Quick start (no GPU, ~10 min)
+## Quick start (no GPU; ~2.4 GB download)
 ```bash
-bash scripts/unpack_attention.sh
 pip install -r envs/requirements-workstation.txt
-python scripts/verify_all.py        # expect: ALL PASS
+# Download the 8 canonical attention JSONs from https://doi.org/10.5281/zenodo.22990102
+# and place them in data/attention/ (CC BY 4.0; ~2-3 GB RAM after parsing)
+python scripts/verify_all.py # expect: ALL PASS
 ```
 ## Full reproduction
 `docs/RUNBOOK_en.md`: **Route A** — full rerun with GPU (S0→S12); **Route B** — data-only recomputation. To locate the file/script/log behind any paper number, see `docs/ASSET_MAP_en.md`.
 ## Data notes
-- Canonical attention JSONs are ~100–500 MB each (each exceeds GitHub's 100 MB file limit); the full files are additionally archived at https://doi.org/10.5281/zenodo.22990102 (Zenodo, CC BY 4.0) — byte-exact 7 MB gzip parts are kept in this repo, `scripts/unpack_attention.sh` restores them, `cmp`-verified.
+- Canonical attention JSONs total ~2.4 GB (each exceeds GitHub's 100 MB file limit) and are archived on Zenodo: https://doi.org/10.5281/zenodo.22990102 (CC BY 4.0). Download them into `data/attention/` before running the observational verification.
 - Raw logs intentionally keep local model paths and library versions (environment evidence, Appendix E); usernames/hostnames are scrubbed to `user@host/env`.
 - `data/probes/zh_cloze.json` is the full 20-item pool (Appendix S); per-model retained subsets (9–13 probes, Δlog-prob > 0.5) are recorded in per-run logs (Table 11).
 ## License
