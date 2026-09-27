@@ -1,0 +1,9 @@
+# Server stack (Mixtral-8x7B only): 2× RTX 4090
+# Paper Appendix E: PyTorch 2.8.0+cu128 / Transformers 5.16.1 / Python 3.10.13
+torch==2.8.0
+transformers==5.16.1
+numpy
+scipy
+pandas
+pyyaml
+accelerate

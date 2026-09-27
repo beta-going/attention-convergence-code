@@ -1,0 +1,78 @@
+[integrity] raw rows: 240 (expect 160)
+[integrity] unique keys: 160; 重复键且数值不同: 0
+[integrity] stats_clean.csv 写入 160 行
+
+== 1) 每输入 conv+foc 下限(升级 '160/160' 用) ==
+Llama-3.1-8B  en  min=0.98  n>=0.90: 20/20
+Llama-3.1-8B  zh  min=0.98  n>=0.90: 20/20
+Mistral-7B    en  min=0.99  n>=0.90: 20/20
+Mistral-7B    zh  min=0.98  n>=0.90: 20/20
+Qwen3-4B      en  min=0.95  n>=0.90: 20/20
+Qwen3-4B      zh  min=0.95  n>=0.90: 20/20
+Qwen3-8B      en  min=0.94  n>=0.90: 20/20
+Qwen3-8B      zh  min=0.95  n>=0.90: 20/20
+
+== 2) P 汇总(摘要/§4.1 限定词用) ==
+Llama-3.1-8B  en  P=0.771±0.016  [0.74,0.80]
+Llama-3.1-8B  zh  P=0.807±0.012  [0.78,0.83]
+Mistral-7B    en  P=0.693±0.021  [0.66,0.74]
+Mistral-7B    zh  P=0.707±0.012  [0.69,0.72]
+Qwen3-4B      en  P=0.735±0.020  [0.69,0.77]
+Qwen3-4B      zh  P=0.746±0.015  [0.72,0.77]
+Qwen3-8B      en  P=0.698±0.020  [0.65,0.73]
+Qwen3-8B      zh  P=0.737±0.013  [0.71,0.77]
+
+== 3) Mistral l* 分布(Table 1 脚注用) ==
+Mistral en: l*=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]  zeros=20  median=0.0 (L=32)
+Mistral zh: l*=[18, 18, 18, 18, 18, 18, 18, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19]  zeros=0  median=19.0 (L=32)
+
+== 4) 组内 dissociation: lpeak - l*(两种收敛次序) ==
+Llama-3.1-8B  en  median=-2  range=[-4,+10]
+Llama-3.1-8B  zh  median=-4  range=[-4,-2]
+Mistral-7B    en  median=+12  range=[+12,+14]
+Mistral-7B    zh  median=-7  range=[-8,-5]
+Qwen3-4B      en  median=-20  range=[-20,-17]
+Qwen3-4B      zh  median=-20  range=[-20,-2]
+Qwen3-8B      en  median=-16  range=[-17,-14]
+Qwen3-8B      zh  median=-16  range=[-18,-14]
+
+== 5) 逐对排序保持率(对每语言 canonical; tie 单列) ==
+--- lstar_over_L / en ---
+  Qwen3-8B       vs Qwen3-4B      : 20/20 (100%) ties=0 canon_rel=-1
+  Qwen3-8B       vs Llama-3.1-8B  : 20/20 (100%) ties=0 canon_rel=+1
+  Qwen3-8B       vs Mistral-7B    : 20/20 (100%) ties=0 canon_rel=+1
+  Qwen3-4B       vs Llama-3.1-8B  : 20/20 (100%) ties=0 canon_rel=+1
+  Qwen3-4B       vs Mistral-7B    : 20/20 (100%) ties=0 canon_rel=+1
+  Llama-3.1-8B   vs Mistral-7B    : 19/20 (95%) ties=1 canon_rel=+1
+--- lstar_over_L / zh ---
+  Qwen3-8B       vs Qwen3-4B      : 18/20 (90%) ties=2 canon_rel=-1
+  Qwen3-8B       vs Llama-3.1-8B  : 20/20 (100%) ties=0 canon_rel=+1
+  Qwen3-8B       vs Mistral-7B    : 19/20 (95%) ties=0 canon_rel=-1
+  Qwen3-4B       vs Llama-3.1-8B  : 20/20 (100%) ties=0 canon_rel=+1
+  Qwen3-4B       vs Mistral-7B    : 10/20 (50%) ties=0 canon_rel=-1
+  Llama-3.1-8B   vs Mistral-7B    : 20/20 (100%) ties=0 canon_rel=-1
+--- lpeak / en ---
+  Qwen3-8B       vs Qwen3-4B      :  8/20 (40%) ties=0 canon_rel=+0
+  Qwen3-8B       vs Llama-3.1-8B  : 20/20 (100%) ties=0 canon_rel=-1
+  Qwen3-8B       vs Mistral-7B    : 20/20 (100%) ties=0 canon_rel=-1
+  Qwen3-4B       vs Llama-3.1-8B  : 20/20 (100%) ties=0 canon_rel=-1
+  Qwen3-4B       vs Mistral-7B    : 20/20 (100%) ties=0 canon_rel=-1
+  Llama-3.1-8B   vs Mistral-7B    :  1/20 (5%) ties=1 canon_rel=+1
+--- lpeak / zh ---
+  Qwen3-8B       vs Qwen3-4B      : 18/20 (90%) ties=0 canon_rel=+1
+  Qwen3-8B       vs Llama-3.1-8B  : 20/20 (100%) ties=0 canon_rel=-1
+  Qwen3-8B       vs Mistral-7B    : 20/20 (100%) ties=0 canon_rel=-1
+  Qwen3-4B       vs Llama-3.1-8B  : 18/20 (90%) ties=0 canon_rel=-1
+  Qwen3-4B       vs Mistral-7B    : 18/20 (90%) ties=0 canon_rel=-1
+  Llama-3.1-8B   vs Mistral-7B    : 18/20 (90%) ties=2 canon_rel=-1
+
+== 6) band(长度)趋势 ==
+Llama-3.1-8B  en  P by band: short:0.781(n=7)  mid:0.778(n=7)  long:0.753(n=6)
+Llama-3.1-8B  zh  P by band: short:0.817(n=7)  mid:0.804(n=7)  long:0.800(n=6)
+Mistral-7B    en  P by band: short:0.703(n=7)  mid:0.698(n=7)  long:0.676(n=6)
+Mistral-7B    zh  P by band: short:0.711(n=7)  mid:0.702(n=7)  long:0.706(n=6)
+Qwen3-4B      en  P by band: short:0.744(n=7)  mid:0.739(n=7)  long:0.721(n=6)
+Qwen3-4B      zh  P by band: short:0.761(n=7)  mid:0.740(n=7)  long:0.737(n=6)
+Qwen3-8B      en  P by band: short:0.705(n=7)  mid:0.705(n=7)  long:0.682(n=6)
+Qwen3-8B      zh  P by band: short:0.745(n=7)  mid:0.732(n=7)  long:0.735(n=6)
+T range overall: 199-512

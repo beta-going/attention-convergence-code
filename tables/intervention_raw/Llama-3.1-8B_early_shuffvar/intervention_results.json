@@ -1,0 +1,1714 @@
+{
+  "meta": {
+    "code_version": "v8.0",
+    "engine": "v6.0-fork (numerics identical)",
+    "model": "/mnt/e/workspace/models/model/NousResearch/Meta-Llama-3.1-8B-Instruct",
+    "num_total_layers": 32,
+    "intervention_layers": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "layer_split_info": "8 layers out of 32 (25.0%)",
+    "modes": [
+      "shuffle_rows"
+    ],
+    "timestamp": "2026-09-06T20:12:43.931445",
+    "zh_probe_filter": null,
+    "zh_auto_filter": true,
+    "zh_filter_meta": [
+      {
+        "idx": 0,
+        "gap": 0.5498046875,
+        "kept": true
+      },
+      {
+        "idx": 1,
+        "gap": 6.828125,
+        "kept": true
+      },
+      {
+        "idx": 2,
+        "gap": 9.859375,
+        "kept": true
+      },
+      {
+        "idx": 3,
+        "gap": 3.9990234375,
+        "kept": true
+      },
+      {
+        "idx": 4,
+        "gap": 2.375,
+        "kept": true
+      },
+      {
+        "idx": 5,
+        "gap": -6.2890625,
+        "kept": false
+      },
+      {
+        "idx": 6,
+        "gap": -0.078125,
+        "kept": false
+      },
+      {
+        "idx": 7,
+        "gap": 9.9140625,
+        "kept": true
+      },
+      {
+        "idx": 8,
+        "gap": 0.4765625,
+        "kept": false
+      },
+      {
+        "idx": 9,
+        "gap": 0.39453125,
+        "kept": false
+      },
+      {
+        "idx": 10,
+        "gap": 0.046875,
+        "kept": false
+      },
+      {
+        "idx": 11,
+        "gap": -11.4921875,
+        "kept": false
+      },
+      {
+        "idx": 12,
+        "gap": -10.1484375,
+        "kept": false
+      },
+      {
+        "idx": 13,
+        "gap": 0.0,
+        "kept": false
+      },
+      {
+        "idx": 14,
+        "gap": 0.0,
+        "kept": false
+      },
+      {
+        "idx": 15,
+        "gap": 9.828125,
+        "kept": true
+      },
+      {
+        "idx": 16,
+        "gap": 6.26953125,
+        "kept": true
+      },
+      {
+        "idx": 17,
+        "gap": 6.10546875,
+        "kept": true
+      },
+      {
+        "idx": 18,
+        "gap": 9.4140625,
+        "kept": true
+      },
+      {
+        "idx": 19,
+        "gap": 0.1953125,
+        "kept": false
+      }
+    ],
+    "baseline_gate": {
+      "en": {
+        "n": 20,
+        "failed": [
+          1,
+          3,
+          19
+        ],
+        "acc": 85.0
+      },
+      "zh": {
+        "n": 10,
+        "failed": [],
+        "acc": 100.0
+      }
+    },
+    "load_in_4bit": false,
+    "num_repeats": 3,
+    "n_en_cloze": 20,
+    "n_zh_cloze": 10,
+    "n_en_free": 10,
+    "n_zh_free": 10,
+    "transformers": "4.52.4",
+    "torch": "2.10.0+cu128",
+    "python": "3.10.19",
+    "operator": "value_space_exact_v6",
+    "shuffle_perm_semantics": "one permutation shared across all intervened layers per seed",
+    "gen_semantics": "cached greedy generation (intervention at prefill) + full-length teacher-forced PPL forward (intervention at every position)",
+    "special_tokens_policy": "v6: cloze w/o BOS; free-form & generation with BOS"
+  },
+  "repeat_0": {
+    "shuffle_rows": {
+      "syntactic_en": {
+        "choice_probes": [
+          {
+            "prompt": "The cat {BLANK} on the mat.",
+            "options": [
+              "sits",
+              "sit"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "sits"
+          },
+          {
+            "prompt": "The dogs {BLANK} in the yard.",
+            "options": [
+              "runs",
+              "run"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": false,
+            "predicted": "runs"
+          },
+          {
+            "prompt": "She {BLANK} to school every day.",
+            "options": [
+              "goes",
+              "go"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "goes"
+          },
+          {
+            "prompt": "They {BLANK} happy today.",
+            "options": [
+              "was",
+              "were"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": false,
+            "predicted": "was"
+          },
+          {
+            "prompt": "Yesterday, he {BLANK} to the store.",
+            "options": [
+              "walked",
+              "walks"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "walked"
+          },
+          {
+            "prompt": "Tomorrow, she will {BLANK} home.",
+            "options": [
+              "go",
+              "goes"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "go"
+          },
+          {
+            "prompt": "Right now, they are {BLANK} lunch.",
+            "options": [
+              "eating",
+              "ate"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "eating"
+          },
+          {
+            "prompt": "I saw {BLANK} elephant at the zoo.",
+            "options": [
+              "an",
+              "a"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "an"
+          },
+          {
+            "prompt": "She is {BLANK} teacher at our school.",
+            "options": [
+              "a",
+              "an"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "a"
+          },
+          {
+            "prompt": "He ate {BLANK} apple that was on the table.",
+            "options": [
+              "the",
+              "a"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "the"
+          },
+          {
+            "prompt": "The book is {BLANK} the table.",
+            "options": [
+              "on",
+              "in"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "on"
+          },
+          {
+            "prompt": "She arrived {BLANK} the airport at noon.",
+            "options": [
+              "at",
+              "on"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "at"
+          },
+          {
+            "prompt": "He is interested {BLANK} music.",
+            "options": [
+              "in",
+              "on"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "in"
+          },
+          {
+            "prompt": "I gave the book to {BLANK}.",
+            "options": [
+              "him",
+              "he"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "him"
+          },
+          {
+            "prompt": "She and {BLANK} went to the store.",
+            "options": [
+              "I",
+              "me"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "I"
+          },
+          {
+            "prompt": "There are many {BLANK} in the classroom.",
+            "options": [
+              "children",
+              "childs"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "children"
+          },
+          {
+            "prompt": "The {BLANK} ran away from the cat.",
+            "options": [
+              "mice",
+              "mouses"
+            ],
+            "logprobs": [
+              0.0,
+              -11.9375
+            ],
+            "correct": true,
+            "predicted": "mice"
+          },
+          {
+            "prompt": "This box is {BLANK} than that one.",
+            "options": [
+              "heavier",
+              "more heavy"
+            ],
+            "logprobs": [
+              0.0,
+              -9.765625
+            ],
+            "correct": true,
+            "predicted": "heavier"
+          },
+          {
+            "prompt": "He {BLANK} swim very well.",
+            "options": [
+              "can",
+              "cans"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "can"
+          },
+          {
+            "prompt": "She {BLANK} like coffee.",
+            "options": [
+              "doesn't",
+              "don't"
+            ],
+            "logprobs": [
+              -12.6640625,
+              -12.453125
+            ],
+            "correct": false,
+            "predicted": "don't"
+          }
+        ],
+        "accuracy": 85.0,
+        "n_choice": 20,
+        "free_form_ppls": [
+          17.475302243846187,
+          63.719155118904446,
+          28.79533168476245,
+          168.66514897134311,
+          138.78939624582793,
+          46.2646974494487,
+          80.2888762887385,
+          253.9267794700758,
+          100.24301130358761,
+          331.0301230033957
+        ],
+        "free_form_records": [
+          {
+            "text": "The quick brown fox jumps over the lazy dog.",
+            "ppl": 17.475302243846187
+          },
+          {
+            "text": "She has been studying English for three years.",
+            "ppl": 63.719155118904446
+          },
+          {
+            "text": "If I had known earlier, I would have told you.",
+            "ppl": 28.79533168476245
+          },
+          {
+            "text": "The children are playing in the park.",
+            "ppl": 168.66514897134311
+          },
+          {
+            "text": "He doesn't know where she went.",
+            "ppl": 138.78939624582793
+          },
+          {
+            "text": "There are many reasons why this happened.",
+            "ppl": 46.2646974494487
+          },
+          {
+            "text": "The book that I read yesterday was fascinating.",
+            "ppl": 80.2888762887385
+          },
+          {
+            "text": "They have already finished their homework.",
+            "ppl": 253.9267794700758
+          },
+          {
+            "text": "She is taller than her brother.",
+            "ppl": 100.24301130358761
+          },
+          {
+            "text": "We should have left earlier to avoid the traffic.",
+            "ppl": 331.0301230033957
+          }
+        ],
+        "mean_ppl": 122.91978217799306
+      },
+      "syntactic_zh": {
+        "choice_probes": [
+          {
+            "prompt": "学生们都{BLANK}了教室。",
+            "options": [
+              "离开",
+              "离开了"
+            ],
+            "logprobs": [
+              -9.1328125,
+              -11.439453125
+            ],
+            "correct": true,
+            "predicted": "离开"
+          },
+          {
+            "prompt": "他每天{BLANK}去上班。",
+            "options": [
+              "骑车",
+              "骑车子"
+            ],
+            "logprobs": [
+              -19.98828125,
+              -29.9921875
+            ],
+            "correct": true,
+            "predicted": "骑车"
+          },
+          {
+            "prompt": "我{BLANK}喜欢这本书。",
+            "options": [
+              "非常",
+              "很非常"
+            ],
+            "logprobs": [
+              -11.96875,
+              -15.95703125
+            ],
+            "correct": true,
+            "predicted": "非常"
+          },
+          {
+            "prompt": "美丽{BLANK}花朵开了。",
+            "options": [
+              "的",
+              "地"
+            ],
+            "logprobs": [
+              -9.4140625,
+              -6.875
+            ],
+            "correct": false,
+            "predicted": "地"
+          },
+          {
+            "prompt": "他高兴{BLANK}跳了起来。",
+            "options": [
+              "地",
+              "的"
+            ],
+            "logprobs": [
+              -7.5859375,
+              -6.921875
+            ],
+            "correct": false,
+            "predicted": "的"
+          },
+          {
+            "prompt": "他正{BLANK}看书呢。",
+            "options": [
+              "在",
+              "再"
+            ],
+            "logprobs": [
+              0.0,
+              -6.26953125
+            ],
+            "correct": true,
+            "predicted": "在"
+          },
+          {
+            "prompt": "他不可能不{BLANK}道。",
+            "options": [
+              "知",
+              "之"
+            ],
+            "logprobs": [
+              0.0,
+              -7.421875
+            ],
+            "correct": true,
+            "predicted": "知"
+          },
+          {
+            "prompt": "没有人不{BLANK}欢这首歌。",
+            "options": [
+              "喜",
+              "洗"
+            ],
+            "logprobs": [
+              -8.9296875,
+              -9.2421875
+            ],
+            "correct": true,
+            "predicted": "喜"
+          },
+          {
+            "prompt": "他比我{BLANK}。",
+            "options": [
+              "高",
+              "更加高"
+            ],
+            "logprobs": [
+              -7.4609375,
+              -21.0859375
+            ],
+            "correct": true,
+            "predicted": "高"
+          },
+          {
+            "prompt": "这{BLANK}我的书。",
+            "options": [
+              "是",
+              "在"
+            ],
+            "logprobs": [
+              0.0,
+              -9.4140625
+            ],
+            "correct": true,
+            "predicted": "是"
+          }
+        ],
+        "accuracy": 80.0,
+        "n_choice": 10,
+        "free_form_ppls": [
+          485.83160124586686,
+          81.56553152787359,
+          124.06144156660888,
+          1154.008462690922,
+          61.284395173559375,
+          187.7716564315956,
+          139.0930968935112,
+          142.92586221976694,
+          128.43965886837555,
+          91.42462393144231
+        ],
+        "free_form_records": [
+          {
+            "text": "虽然今天下着大雨，但是他还是按时到达了公司。",
+            "ppl": 485.83160124586686
+          },
+          {
+            "text": "这本书的内容非常丰富，值得反复阅读。",
+            "ppl": 81.56553152787359
+          },
+          {
+            "text": "如果明天天气好的话，我们就去公园散步吧。",
+            "ppl": 124.06144156660888
+          },
+          {
+            "text": "他不仅学习好，而且体育也很棒。",
+            "ppl": 1154.008462690922
+          },
+          {
+            "text": "这个问题比较复杂，需要仔细分析才能解决。",
+            "ppl": 61.284395173559375
+          },
+          {
+            "text": "她说的话让我感到非常惊讶和意外。",
+            "ppl": 187.7716564315956
+          },
+          {
+            "text": "尽管遇到了很多困难，他们依然坚持完成了任务。",
+            "ppl": 139.0930968935112
+          },
+          {
+            "text": "这个地方的风景很美，吸引了很多游客。",
+            "ppl": 142.92586221976694
+          },
+          {
+            "text": "他的态度让人觉得很不舒服。",
+            "ppl": 128.43965886837555
+          },
+          {
+            "text": "我们需要更多的时间来准备这次重要的会议。",
+            "ppl": 91.42462393144231
+          }
+        ],
+        "mean_ppl": 259.6406330549523
+      }
+    }
+  },
+  "repeat_1": {
+    "shuffle_rows": {
+      "syntactic_en": {
+        "choice_probes": [
+          {
+            "prompt": "The cat {BLANK} on the mat.",
+            "options": [
+              "sits",
+              "sit"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "sits"
+          },
+          {
+            "prompt": "The dogs {BLANK} in the yard.",
+            "options": [
+              "runs",
+              "run"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": false,
+            "predicted": "runs"
+          },
+          {
+            "prompt": "She {BLANK} to school every day.",
+            "options": [
+              "goes",
+              "go"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "goes"
+          },
+          {
+            "prompt": "They {BLANK} happy today.",
+            "options": [
+              "was",
+              "were"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": false,
+            "predicted": "was"
+          },
+          {
+            "prompt": "Yesterday, he {BLANK} to the store.",
+            "options": [
+              "walked",
+              "walks"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "walked"
+          },
+          {
+            "prompt": "Tomorrow, she will {BLANK} home.",
+            "options": [
+              "go",
+              "goes"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "go"
+          },
+          {
+            "prompt": "Right now, they are {BLANK} lunch.",
+            "options": [
+              "eating",
+              "ate"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "eating"
+          },
+          {
+            "prompt": "I saw {BLANK} elephant at the zoo.",
+            "options": [
+              "an",
+              "a"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "an"
+          },
+          {
+            "prompt": "She is {BLANK} teacher at our school.",
+            "options": [
+              "a",
+              "an"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "a"
+          },
+          {
+            "prompt": "He ate {BLANK} apple that was on the table.",
+            "options": [
+              "the",
+              "a"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "the"
+          },
+          {
+            "prompt": "The book is {BLANK} the table.",
+            "options": [
+              "on",
+              "in"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "on"
+          },
+          {
+            "prompt": "She arrived {BLANK} the airport at noon.",
+            "options": [
+              "at",
+              "on"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "at"
+          },
+          {
+            "prompt": "He is interested {BLANK} music.",
+            "options": [
+              "in",
+              "on"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "in"
+          },
+          {
+            "prompt": "I gave the book to {BLANK}.",
+            "options": [
+              "him",
+              "he"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "him"
+          },
+          {
+            "prompt": "She and {BLANK} went to the store.",
+            "options": [
+              "I",
+              "me"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "I"
+          },
+          {
+            "prompt": "There are many {BLANK} in the classroom.",
+            "options": [
+              "children",
+              "childs"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "children"
+          },
+          {
+            "prompt": "The {BLANK} ran away from the cat.",
+            "options": [
+              "mice",
+              "mouses"
+            ],
+            "logprobs": [
+              0.0,
+              -9.0
+            ],
+            "correct": true,
+            "predicted": "mice"
+          },
+          {
+            "prompt": "This box is {BLANK} than that one.",
+            "options": [
+              "heavier",
+              "more heavy"
+            ],
+            "logprobs": [
+              0.0,
+              -14.5
+            ],
+            "correct": true,
+            "predicted": "heavier"
+          },
+          {
+            "prompt": "He {BLANK} swim very well.",
+            "options": [
+              "can",
+              "cans"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "can"
+          },
+          {
+            "prompt": "She {BLANK} like coffee.",
+            "options": [
+              "doesn't",
+              "don't"
+            ],
+            "logprobs": [
+              -0.3984375,
+              -0.47998046875
+            ],
+            "correct": true,
+            "predicted": "doesn't"
+          }
+        ],
+        "accuracy": 90.0,
+        "n_choice": 20,
+        "free_form_ppls": [
+          18.24421298108065,
+          36.431584199221454,
+          43.93767112099478,
+          78.293835013792,
+          111.24168846458693,
+          71.72952791559058,
+          259.6823645726722,
+          164.8072912112579,
+          83.13493349459137,
+          270.16770409472696
+        ],
+        "free_form_records": [
+          {
+            "text": "The quick brown fox jumps over the lazy dog.",
+            "ppl": 18.24421298108065
+          },
+          {
+            "text": "She has been studying English for three years.",
+            "ppl": 36.431584199221454
+          },
+          {
+            "text": "If I had known earlier, I would have told you.",
+            "ppl": 43.93767112099478
+          },
+          {
+            "text": "The children are playing in the park.",
+            "ppl": 78.293835013792
+          },
+          {
+            "text": "He doesn't know where she went.",
+            "ppl": 111.24168846458693
+          },
+          {
+            "text": "There are many reasons why this happened.",
+            "ppl": 71.72952791559058
+          },
+          {
+            "text": "The book that I read yesterday was fascinating.",
+            "ppl": 259.6823645726722
+          },
+          {
+            "text": "They have already finished their homework.",
+            "ppl": 164.8072912112579
+          },
+          {
+            "text": "She is taller than her brother.",
+            "ppl": 83.13493349459137
+          },
+          {
+            "text": "We should have left earlier to avoid the traffic.",
+            "ppl": 270.16770409472696
+          }
+        ],
+        "mean_ppl": 113.76708130685147
+      },
+      "syntactic_zh": {
+        "choice_probes": [
+          {
+            "prompt": "学生们都{BLANK}了教室。",
+            "options": [
+              "离开",
+              "离开了"
+            ],
+            "logprobs": [
+              -6.8125,
+              -16.109375
+            ],
+            "correct": true,
+            "predicted": "离开"
+          },
+          {
+            "prompt": "他每天{BLANK}去上班。",
+            "options": [
+              "骑车",
+              "骑车子"
+            ],
+            "logprobs": [
+              -20.703125,
+              -33.0546875
+            ],
+            "correct": true,
+            "predicted": "骑车"
+          },
+          {
+            "prompt": "我{BLANK}喜欢这本书。",
+            "options": [
+              "非常",
+              "很非常"
+            ],
+            "logprobs": [
+              -11.96875,
+              -17.86328125
+            ],
+            "correct": true,
+            "predicted": "非常"
+          },
+          {
+            "prompt": "美丽{BLANK}花朵开了。",
+            "options": [
+              "的",
+              "地"
+            ],
+            "logprobs": [
+              -9.453125,
+              -6.48046875
+            ],
+            "correct": false,
+            "predicted": "地"
+          },
+          {
+            "prompt": "他高兴{BLANK}跳了起来。",
+            "options": [
+              "地",
+              "的"
+            ],
+            "logprobs": [
+              -2.296875,
+              -3.515625
+            ],
+            "correct": true,
+            "predicted": "地"
+          },
+          {
+            "prompt": "他正{BLANK}看书呢。",
+            "options": [
+              "在",
+              "再"
+            ],
+            "logprobs": [
+              0.0,
+              -9.1953125
+            ],
+            "correct": true,
+            "predicted": "在"
+          },
+          {
+            "prompt": "他不可能不{BLANK}道。",
+            "options": [
+              "知",
+              "之"
+            ],
+            "logprobs": [
+              0.0,
+              -7.63671875
+            ],
+            "correct": true,
+            "predicted": "知"
+          },
+          {
+            "prompt": "没有人不{BLANK}欢这首歌。",
+            "options": [
+              "喜",
+              "洗"
+            ],
+            "logprobs": [
+              -10.96875,
+              -9.796875
+            ],
+            "correct": false,
+            "predicted": "洗"
+          },
+          {
+            "prompt": "他比我{BLANK}。",
+            "options": [
+              "高",
+              "更加高"
+            ],
+            "logprobs": [
+              -6.8125,
+              -19.23828125
+            ],
+            "correct": true,
+            "predicted": "高"
+          },
+          {
+            "prompt": "这{BLANK}我的书。",
+            "options": [
+              "是",
+              "在"
+            ],
+            "logprobs": [
+              0.0,
+              -9.4140625
+            ],
+            "correct": true,
+            "predicted": "是"
+          }
+        ],
+        "accuracy": 80.0,
+        "n_choice": 10,
+        "free_form_ppls": [
+          799.7555709857147,
+          242.51119134571317,
+          569.0763708972659,
+          612.5740132647379,
+          66.99749096731104,
+          184.62857771184594,
+          677.2798301987449,
+          68.79532865545131,
+          228.5318148479794,
+          262.5123674153934
+        ],
+        "free_form_records": [
+          {
+            "text": "虽然今天下着大雨，但是他还是按时到达了公司。",
+            "ppl": 799.7555709857147
+          },
+          {
+            "text": "这本书的内容非常丰富，值得反复阅读。",
+            "ppl": 242.51119134571317
+          },
+          {
+            "text": "如果明天天气好的话，我们就去公园散步吧。",
+            "ppl": 569.0763708972659
+          },
+          {
+            "text": "他不仅学习好，而且体育也很棒。",
+            "ppl": 612.5740132647379
+          },
+          {
+            "text": "这个问题比较复杂，需要仔细分析才能解决。",
+            "ppl": 66.99749096731104
+          },
+          {
+            "text": "她说的话让我感到非常惊讶和意外。",
+            "ppl": 184.62857771184594
+          },
+          {
+            "text": "尽管遇到了很多困难，他们依然坚持完成了任务。",
+            "ppl": 677.2798301987449
+          },
+          {
+            "text": "这个地方的风景很美，吸引了很多游客。",
+            "ppl": 68.79532865545131
+          },
+          {
+            "text": "他的态度让人觉得很不舒服。",
+            "ppl": 228.5318148479794
+          },
+          {
+            "text": "我们需要更多的时间来准备这次重要的会议。",
+            "ppl": 262.5123674153934
+          }
+        ],
+        "mean_ppl": 371.26625562901575
+      }
+    }
+  },
+  "repeat_2": {
+    "shuffle_rows": {
+      "syntactic_en": {
+        "choice_probes": [
+          {
+            "prompt": "The cat {BLANK} on the mat.",
+            "options": [
+              "sits",
+              "sit"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "sits"
+          },
+          {
+            "prompt": "The dogs {BLANK} in the yard.",
+            "options": [
+              "runs",
+              "run"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": false,
+            "predicted": "runs"
+          },
+          {
+            "prompt": "She {BLANK} to school every day.",
+            "options": [
+              "goes",
+              "go"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "goes"
+          },
+          {
+            "prompt": "They {BLANK} happy today.",
+            "options": [
+              "was",
+              "were"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": false,
+            "predicted": "was"
+          },
+          {
+            "prompt": "Yesterday, he {BLANK} to the store.",
+            "options": [
+              "walked",
+              "walks"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "walked"
+          },
+          {
+            "prompt": "Tomorrow, she will {BLANK} home.",
+            "options": [
+              "go",
+              "goes"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "go"
+          },
+          {
+            "prompt": "Right now, they are {BLANK} lunch.",
+            "options": [
+              "eating",
+              "ate"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "eating"
+          },
+          {
+            "prompt": "I saw {BLANK} elephant at the zoo.",
+            "options": [
+              "an",
+              "a"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "an"
+          },
+          {
+            "prompt": "She is {BLANK} teacher at our school.",
+            "options": [
+              "a",
+              "an"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "a"
+          },
+          {
+            "prompt": "He ate {BLANK} apple that was on the table.",
+            "options": [
+              "the",
+              "a"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "the"
+          },
+          {
+            "prompt": "The book is {BLANK} the table.",
+            "options": [
+              "on",
+              "in"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "on"
+          },
+          {
+            "prompt": "She arrived {BLANK} the airport at noon.",
+            "options": [
+              "at",
+              "on"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "at"
+          },
+          {
+            "prompt": "He is interested {BLANK} music.",
+            "options": [
+              "in",
+              "on"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "in"
+          },
+          {
+            "prompt": "I gave the book to {BLANK}.",
+            "options": [
+              "him",
+              "he"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "him"
+          },
+          {
+            "prompt": "She and {BLANK} went to the store.",
+            "options": [
+              "I",
+              "me"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "I"
+          },
+          {
+            "prompt": "There are many {BLANK} in the classroom.",
+            "options": [
+              "children",
+              "childs"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "children"
+          },
+          {
+            "prompt": "The {BLANK} ran away from the cat.",
+            "options": [
+              "mice",
+              "mouses"
+            ],
+            "logprobs": [
+              0.0,
+              -10.125
+            ],
+            "correct": true,
+            "predicted": "mice"
+          },
+          {
+            "prompt": "This box is {BLANK} than that one.",
+            "options": [
+              "heavier",
+              "more heavy"
+            ],
+            "logprobs": [
+              0.0,
+              -11.515625
+            ],
+            "correct": true,
+            "predicted": "heavier"
+          },
+          {
+            "prompt": "He {BLANK} swim very well.",
+            "options": [
+              "can",
+              "cans"
+            ],
+            "logprobs": [
+              0.0,
+              0.0
+            ],
+            "correct": true,
+            "predicted": "can"
+          },
+          {
+            "prompt": "She {BLANK} like coffee.",
+            "options": [
+              "doesn't",
+              "don't"
+            ],
+            "logprobs": [
+              -11.1796875,
+              -16.890625
+            ],
+            "correct": true,
+            "predicted": "doesn't"
+          }
+        ],
+        "accuracy": 90.0,
+        "n_choice": 20,
+        "free_form_ppls": [
+          7.0270425024389604,
+          86.63118964534175,
+          42.8428919503731,
+          58.10839924984111,
+          156.23273380610863,
+          50.50425694310037,
+          200.65520929451492,
+          185.39397552114147,
+          71.54346425648681,
+          189.02178955365704
+        ],
+        "free_form_records": [
+          {
+            "text": "The quick brown fox jumps over the lazy dog.",
+            "ppl": 7.0270425024389604
+          },
+          {
+            "text": "She has been studying English for three years.",
+            "ppl": 86.63118964534175
+          },
+          {
+            "text": "If I had known earlier, I would have told you.",
+            "ppl": 42.8428919503731
+          },
+          {
+            "text": "The children are playing in the park.",
+            "ppl": 58.10839924984111
+          },
+          {
+            "text": "He doesn't know where she went.",
+            "ppl": 156.23273380610863
+          },
+          {
+            "text": "There are many reasons why this happened.",
+            "ppl": 50.50425694310037
+          },
+          {
+            "text": "The book that I read yesterday was fascinating.",
+            "ppl": 200.65520929451492
+          },
+          {
+            "text": "They have already finished their homework.",
+            "ppl": 185.39397552114147
+          },
+          {
+            "text": "She is taller than her brother.",
+            "ppl": 71.54346425648681
+          },
+          {
+            "text": "We should have left earlier to avoid the traffic.",
+            "ppl": 189.02178955365704
+          }
+        ],
+        "mean_ppl": 104.7960952723004
+      },
+      "syntactic_zh": {
+        "choice_probes": [
+          {
+            "prompt": "学生们都{BLANK}了教室。",
+            "options": [
+              "离开",
+              "离开了"
+            ],
+            "logprobs": [
+              -13.71875,
+              -17.80078125
+            ],
+            "correct": true,
+            "predicted": "离开"
+          },
+          {
+            "prompt": "他每天{BLANK}去上班。",
+            "options": [
+              "骑车",
+              "骑车子"
+            ],
+            "logprobs": [
+              -21.1015625,
+              -26.71875
+            ],
+            "correct": true,
+            "predicted": "骑车"
+          },
+          {
+            "prompt": "我{BLANK}喜欢这本书。",
+            "options": [
+              "非常",
+              "很非常"
+            ],
+            "logprobs": [
+              -11.96875,
+              -21.5625
+            ],
+            "correct": true,
+            "predicted": "非常"
+          },
+          {
+            "prompt": "美丽{BLANK}花朵开了。",
+            "options": [
+              "的",
+              "地"
+            ],
+            "logprobs": [
+              -6.0234375,
+              -7.8046875
+            ],
+            "correct": true,
+            "predicted": "的"
+          },
+          {
+            "prompt": "他高兴{BLANK}跳了起来。",
+            "options": [
+              "地",
+              "的"
+            ],
+            "logprobs": [
+              -8.9453125,
+              -5.14453125
+            ],
+            "correct": false,
+            "predicted": "的"
+          },
+          {
+            "prompt": "他正{BLANK}看书呢。",
+            "options": [
+              "在",
+              "再"
+            ],
+            "logprobs": [
+              0.0,
+              -6.23046875
+            ],
+            "correct": true,
+            "predicted": "在"
+          },
+          {
+            "prompt": "他不可能不{BLANK}道。",
+            "options": [
+              "知",
+              "之"
+            ],
+            "logprobs": [
+              0.0,
+              -8.5078125
+            ],
+            "correct": true,
+            "predicted": "知"
+          },
+          {
+            "prompt": "没有人不{BLANK}欢这首歌。",
+            "options": [
+              "喜",
+              "洗"
+            ],
+            "logprobs": [
+              -11.3046875,
+              -13.59375
+            ],
+            "correct": true,
+            "predicted": "喜"
+          },
+          {
+            "prompt": "他比我{BLANK}。",
+            "options": [
+              "高",
+              "更加高"
+            ],
+            "logprobs": [
+              -11.078125,
+              -16.9609375
+            ],
+            "correct": true,
+            "predicted": "高"
+          },
+          {
+            "prompt": "这{BLANK}我的书。",
+            "options": [
+              "是",
+              "在"
+            ],
+            "logprobs": [
+              0.0,
+              -9.4140625
+            ],
+            "correct": true,
+            "predicted": "是"
+          }
+        ],
+        "accuracy": 90.0,
+        "n_choice": 10,
+        "free_form_ppls": [
+          525.5209160746691,
+          81.27268500479708,
+          347.4854486586188,
+          843.0869393773096,
+          119.51210959030446,
+          517.3899988053277,
+          364.90315042843326,
+          97.96786818608174,
+          174.14391736403363,
+          118.06321569145129
+        ],
+        "free_form_records": [
+          {
+            "text": "虽然今天下着大雨，但是他还是按时到达了公司。",
+            "ppl": 525.5209160746691
+          },
+          {
+            "text": "这本书的内容非常丰富，值得反复阅读。",
+            "ppl": 81.27268500479708
+          },
+          {
+            "text": "如果明天天气好的话，我们就去公园散步吧。",
+            "ppl": 347.4854486586188
+          },
+          {
+            "text": "他不仅学习好，而且体育也很棒。",
+            "ppl": 843.0869393773096
+          },
+          {
+            "text": "这个问题比较复杂，需要仔细分析才能解决。",
+            "ppl": 119.51210959030446
+          },
+          {
+            "text": "她说的话让我感到非常惊讶和意外。",
+            "ppl": 517.3899988053277
+          },
+          {
+            "text": "尽管遇到了很多困难，他们依然坚持完成了任务。",
+            "ppl": 364.90315042843326
+          },
+          {
+            "text": "这个地方的风景很美，吸引了很多游客。",
+            "ppl": 97.96786818608174
+          },
+          {
+            "text": "他的态度让人觉得很不舒服。",
+            "ppl": 174.14391736403363
+          },
+          {
+            "text": "我们需要更多的时间来准备这次重要的会议。",
+            "ppl": 118.06321569145129
+          }
+        ],
+        "mean_ppl": 318.9346249181027
+      }
+    }
+  },
+  "summary": {
+    "shuffle_rows": {
+      "syntactic_en_acc_mean": 88.33333333333333,
+      "syntactic_en_acc_std": 2.357022603955158,
+      "syntactic_en_ppl_mean": 113.82765291904832,
+      "syntactic_zh_acc_mean": 83.33333333333333,
+      "syntactic_zh_acc_std": 4.714045207910316,
+      "syntactic_zh_ppl_mean": 316.6138378673569
+    }
+  }
+}

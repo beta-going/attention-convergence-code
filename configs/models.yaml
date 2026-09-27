@@ -1,0 +1,13 @@
+defaults: {dtype: float16, device_map: auto, attn_implementation: eager}
+models:
+  qwen3-4b: {hf_id: "Qwen/Qwen3-4B", local_path: "CHANGE TO YOUR PATH", layers: 36}
+  qwen3-8b: {hf_id: "Qwen/Qwen3-8B", local_path: "CHANGE TO YOUR PATH", layers: 36}
+  qwen3-0.6b: {hf_id: "Qwen/Qwen3-0.6B", local_path: "CHANGE TO YOUR PATH", layers: 28}
+  qwen3-1.7b: {hf_id: "Qwen/Qwen3-1.7B", local_path: "CHANGE TO YOUR PATH", layers: 28}
+  qwen3-14b: {hf_id: "Qwen/Qwen3-14B", local_path: "CHANGE TO YOUR PATH", quantization: {load_in_4bit: true, bnb_4bit_quant_type: "nf4", bnb_4bit_use_double_quant: true}, layers: 40}
+  qwen3-8b-base: {hf_id: "Qwen/Qwen3-8B-Base", local_path: "CHANGE TO YOUR PATH", layers: 36}
+  llama-3.1-8b: {hf_id: "meta-llama/Llama-3.1-8B-Instruct", local_path: "CHANGE TO YOUR PATH", layers: 32}
+  llama-3.1-8b-base: {hf_id: "meta-llama/Llama-3.1-8B", local_path: "CHANGE TO YOUR PATH", layers: 32}
+  mistral-7b: {hf_id: "mistralai/Mistral-7B-Instruct-v0.3", local_path: "CHANGE TO YOUR PATH", layers: 32}
+  internlm3-8b: {hf_id: "internlm/internlm3-8b-instruct", local_path: "CHANGE TO YOUR PATH", layers: 48}
+  mixtral-8x7b: {hf_id: "mistralai/Mixtral-8x7B-Instruct-v0.1", local_path: "CHANGE TO YOUR PATH", note: "server stack; 4096 sliding window > 512 covers all inputs", layers: 32}

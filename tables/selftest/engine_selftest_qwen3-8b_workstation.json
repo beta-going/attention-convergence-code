@@ -1,0 +1,223 @@
+{
+  "meta": {
+    "code_version": "v2.0-fixed",
+    "model": "/mnt/e/workspace/models/model/Qwen/Qwen3-8B",
+    "intervention_layers": [
+      0,
+      1,
+      2
+    ],
+    "modes": [
+      "baseline",
+      "uniform"
+    ],
+    "timestamp": "2026-08-30T17:53:13.548689",
+    "hooks_verified": true
+  },
+  "baseline": {
+    "syntactic_en": {
+      "choice_probes": [
+        {
+          "prompt": "The cat {BLANK} on the mat.",
+          "options": [
+            "is",
+            "are"
+          ],
+          "logprobs": [
+            -1.3984375,
+            -7.5546875
+          ],
+          "correct": true,
+          "predicted": "is"
+        },
+        {
+          "prompt": "The dogs {BLANK} in the yard.",
+          "options": [
+            "is",
+            "are"
+          ],
+          "logprobs": [
+            -5.32421875,
+            -2.107421875
+          ],
+          "correct": true,
+          "predicted": "are"
+        },
+        {
+          "prompt": "She {BLANK} to school every day.",
+          "options": [
+            "goes",
+            "go"
+          ],
+          "logprobs": [
+            -7.6953125,
+            -10.8203125
+          ],
+          "correct": true,
+          "predicted": "goes"
+        },
+        {
+          "prompt": "They {BLANK} happy today.",
+          "options": [
+            "is",
+            "are"
+          ],
+          "logprobs": [
+            -6.73046875,
+            -1.9638671875
+          ],
+          "correct": true,
+          "predicted": "are"
+        }
+      ],
+      "accuracy": 100.0,
+      "n_choice": 4,
+      "free_form_ppls": [
+        27.876646816125923,
+        88.08052538114481
+      ],
+      "mean_ppl": 57.97858609863537
+    },
+    "syntactic_zh": {
+      "choice_probes": [
+        {
+          "prompt": "他{BLANK}一个学生。",
+          "options": [
+            "是",
+            "们"
+          ],
+          "logprobs": [
+            -9.265625,
+            -12.234375
+          ],
+          "correct": true,
+          "predicted": "是"
+        },
+        {
+          "prompt": "这些书{BLANK}我的。",
+          "options": [
+            "是",
+            "地"
+          ],
+          "logprobs": [
+            -8.109375,
+            -15.5625
+          ],
+          "correct": true,
+          "predicted": "是"
+        }
+      ],
+      "accuracy": 100.0,
+      "n_choice": 2,
+      "free_form_ppls": [
+        699.2446406118878,
+        879.084542165382,
+        464.38443738705735
+      ],
+      "mean_ppl": 680.9045400547757
+    }
+  },
+  "uniform": {
+    "syntactic_en": {
+      "choice_probes": [
+        {
+          "prompt": "The cat {BLANK} on the mat.",
+          "options": [
+            "is",
+            "are"
+          ],
+          "logprobs": [
+            -6.10546875,
+            -8.8125
+          ],
+          "correct": true,
+          "predicted": "is"
+        },
+        {
+          "prompt": "The dogs {BLANK} in the yard.",
+          "options": [
+            "is",
+            "are"
+          ],
+          "logprobs": [
+            -7.37890625,
+            -10.390625
+          ],
+          "correct": false,
+          "predicted": "is"
+        },
+        {
+          "prompt": "She {BLANK} to school every day.",
+          "options": [
+            "goes",
+            "go"
+          ],
+          "logprobs": [
+            -12.921875,
+            -14.0859375
+          ],
+          "correct": true,
+          "predicted": "goes"
+        },
+        {
+          "prompt": "They {BLANK} happy today.",
+          "options": [
+            "is",
+            "are"
+          ],
+          "logprobs": [
+            -8.4921875,
+            -10.25
+          ],
+          "correct": false,
+          "predicted": "is"
+        }
+      ],
+      "accuracy": 50.0,
+      "n_choice": 4,
+      "free_form_ppls": [
+        64313.36308797364,
+        78361.706731306
+      ],
+      "mean_ppl": 71337.53490963981
+    },
+    "syntactic_zh": {
+      "choice_probes": [
+        {
+          "prompt": "他{BLANK}一个学生。",
+          "options": [
+            "是",
+            "们"
+          ],
+          "logprobs": [
+            -11.46875,
+            -7.125
+          ],
+          "correct": false,
+          "predicted": "们"
+        },
+        {
+          "prompt": "这些书{BLANK}我的。",
+          "options": [
+            "是",
+            "地"
+          ],
+          "logprobs": [
+            -7.52734375,
+            -16.25
+          ],
+          "correct": true,
+          "predicted": "是"
+        }
+      ],
+      "accuracy": 50.0,
+      "n_choice": 2,
+      "free_form_ppls": [
+        209157.74390112472,
+        12092.769227365887,
+        9723.793364949908
+      ],
+      "mean_ppl": 76991.4354978135
+    }
+  }
+}
