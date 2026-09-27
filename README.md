@@ -1,5 +1,5 @@
 # entropy-crosslingual
-Code, data, and one-shot verification for the paper **"Attention Convergence and Structural Divergence: A Cross-Architecture Study of Large Language Models"** (under review, double-blind; de-anonymized upon acceptance).
+Code, data, and one-shot verification for the preprint **"Attention Convergence Across Architectures: Cross-Lingual Structure and Surrogate-Dependent Causal Effects"** (Wan-Jiu Yang, 2026; DOI: 10.5281/zenodo.22987817).
 ## What this repo contains
 - **Observational study** — canonical attention for 8 model×language configs (Llama-3.1-8B, Mistral-7B, Qwen3-4B/8B × en/zh): full attention matrices, convergence/compression statistics, positional-induction ρ_pos by depth band (paper Tables 1, 2, 6, 7; Figs 1, 3–8).
 - **Intervention study** — attention-band interventions (early/mid/late; shuffle & mean modes) across 11 configurations (Qwen3-0.6B…14B incl. Base/Instruct/INT4 variants, Llama-3.1-8B Base/Instruct, InternLM3-8B, Mistral-7B) plus Mixtral-8x7B on a second environment and matched-global controls, over {en,zh}×{cloze 20, free 10, gen 5} probes (paper Tables 3, 4, 8–12; Fig 2).
@@ -8,7 +8,6 @@ Headline results reproduced in this artifact: Qwen3 early-band ρ_pos ratios **1
 ## Repository layout
 ```
 configs/models.yaml         # model ids / local paths (S1)
-data/attention_parts/          # canonical attention matrices, 7MB gzip split (8 configs)
 data/attention/                # rebuilt by scripts/unpack_attention.sh
 data/inputs/canonical/         # en/zh prompt sets (App A)
 data/probes/                   # 6 probe sets: {en,zh}×{cloze,free,gen}
@@ -36,7 +35,7 @@ python scripts/verify_all.py        # expect: ALL PASS
 ## Full reproduction
 `docs/RUNBOOK_en.md`: **Route A** — full rerun with GPU (S0→S12); **Route B** — data-only recomputation. To locate the file/script/log behind any paper number, see `docs/ASSET_MAP_en.md`.
 ## Data notes
-- Canonical attention JSONs are ~100–500 MB each; stored as byte-exact 7 MB gzip parts to satisfy hosting limits — `scripts/unpack_attention.sh` restores them, `cmp`-verified.
+- Canonical attention JSONs are ~100–500 MB each (each exceeds GitHub's 100 MB file limit); the full files are additionally archived at https://doi.org/10.5281/zenodo.22990102 (Zenodo, CC BY 4.0) — byte-exact 7 MB gzip parts are kept in this repo, `scripts/unpack_attention.sh` restores them, `cmp`-verified.
 - Raw logs intentionally keep local model paths and library versions (environment evidence, Appendix E); usernames/hostnames are scrubbed to `user@host/env`.
 - `data/probes/zh_cloze.json` is the full 20-item pool (Appendix S); per-model retained subsets (9–13 probes, Δlog-prob > 0.5) are recorded in per-run logs (Table 11).
 ## License
@@ -45,9 +44,10 @@ python scripts/verify_all.py        # expect: ALL PASS
 - Model weights are not redistributed; each model is used under its own license (Appendix E of the paper).
 ## Citation
 ```bibtex
-@misc{atlas2026anonymous,
-  title  = {Attention Convergence and Structural Divergence: A Cross-Architecture Study of Large Language Models},
-  author = {Anonymous},
-  year   = {2026},
-  note   = {Under review. De-anonymized citation upon acceptance.}
+@misc{yang2026atlas,
+  title = {Attention Convergence Across Architectures: Cross-Lingual Structure and Surrogate-Dependent Causal Effects},
+  author = {Yang, Wan-Jiu},
+  year = {2026},
+  doi = {10.5281/zenodo.22987817},
+  url = {https://doi.org/10.5281/zenodo.22987817}
 }

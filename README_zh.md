@@ -1,5 +1,5 @@
 # entropy-crosslingual
-论文 **"Attention Convergence and Structural Divergence: A Cross-Architecture Study of Large Language Models"**（审稿中，双盲；录用后去匿名化）的代码、数据与单命令验证。
+预印本 **"Attention Convergence Across Architectures: Cross-Lingual Structure and Surrogate-Dependent Causal Effects"**（Wan-Jiu Yang, 2026；DOI: 10.5281/zenodo.22987817）的代码、数据与单命令验证。
 ## 仓库内容
 - **观测研究** — 8 个模型×语言配置（Llama-3.1-8B、Mistral-7B、Qwen3-4B/8B × en/zh）的 canonical 注意力：完整注意力矩阵、收敛/压缩统计、分深度带的 positional-induction ρ_pos（论文 Tables 1、2、6、7；Figs 1、3–8）。
 - **干预研究** — 注意力带干预（early/mid/late；shuffle 与 mean 两种模式），覆盖 11 个配置（Qwen3-0.6B…14B 含 Base/Instruct/INT4 变体、Llama-3.1-8B Base/Instruct、InternLM3-8B、Mistral-7B），另有 Mixtral-8x7B 在另一套环境上运行以及 matched-global 对照；探针为 {en,zh}×{cloze 20, free 10, gen 5}（论文 Tables 3、4、8–12；Fig 2）。
@@ -7,7 +7,6 @@
 ## 仓库结构
 ```
 configs/models.yaml            # 模型 id / 本地路径（S1）
-data/attention_parts/          # canonical 注意力矩阵，7MB gzip 分卷（8 配置）
 data/attention/                # 由 scripts/unpack_attention.sh 重建
 data/inputs/canonical/         # en/zh 提示集（App A）
 data/probes/                   # 6 个探针集：{en,zh}×{cloze,free,gen}
@@ -35,7 +34,7 @@ python scripts/verify_all.py    # 预期输出: ALL PASS
 ## 完整复现
 `docs/RUNBOOK_zh.md`：**路线 A** — 有 GPU 全量重跑（S0→S12）；**路线 B** — 纯数据复算。要定位任一论文数字背后的文件/脚本/日志，见 `docs/ASSET_MAP_zh.md`。
 ## 数据说明
-- canonical 注意力 JSON 单个约 100–500 MB；为满足托管限制，按字节精确切成 7 MB gzip 分卷 — `scripts/unpack_attention.sh` 负责还原，并经 `cmp` 逐字节校验。
+- 完整文件已另存档于 https://doi.org/10.5281/zenodo.22990102（Zenodo，CC BY 4.0）；仓库内保留按字节精确切的 7 MB gzip 分卷。
 - 原始日志有意保留模型本地路径与库版本（环境证据，Appendix E）；用户名/主机名已清洗为 `user@host/env`。
 - `data/probes/zh_cloze.json` 是完整的 20 题原始池（Appendix S）；各模型保留子集（9–13 题，Δlog-prob > 0.5）记录于逐次运行日志（Table 11）。
 ## 许可证
@@ -44,10 +43,11 @@ python scripts/verify_all.py    # 预期输出: ALL PASS
 - 模型权重不予再分发；各模型按其自身许可使用（论文 Appendix E）。
 ## 引用
 ```bibtex
-@misc{atlas2026anonymous,
-  title = {Attention Convergence and Structural Divergence: A Cross-Architecture Study of Large Language Models},
-  author = {Anonymous},
+@misc{yang2026atlas,
+  title = {Attention Convergence Across Architectures: Cross-Lingual Structure and Surrogate-Dependent Causal Effects},
+  author = {Yang, Wan-Jiu},
   year = {2026},
-  note = {Under review. De-anonymized citation upon acceptance.}
+  doi = {10.5281/zenodo.22987817},
+  url = {https://doi.org/10.5281/zenodo.22987817}
 }
 ```
